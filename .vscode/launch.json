@@ -13,7 +13,7 @@
                 "<node_internals>/**"
             
             ],
-            "program": "${workspaceFolder}/Standard Projects/4. Race Day.js",
+            "program": "${workspaceFolder}/Standard Projects/7. Secret Message.js",
         }
     ]
 }
