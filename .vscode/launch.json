@@ -13,8 +13,7 @@
                 "<node_internals>/**"
             
             ],
-            "program": "${workspaceFolder}/Challenge Projects/1. Number Guesser/script.jss", 
-            "program": "${workspaceFolder}/Challenge Projects/1Standard Projects/6. Sleep Debt Calculator.js"
+            "program": "${workspaceFolder}/Standard Projects/4. Race Day.js",
         }
     ]
 }
