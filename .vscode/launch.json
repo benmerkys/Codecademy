@@ -4,15 +4,20 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
-        
         {
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
+            "outputCapture": "std",
             "skipFiles": [
                 "<node_internals>/**"
+            
             ],
+<<<<<<< HEAD
             "program": "${workspaceFolder}\\Standard Projects\\8. Whale Talk.js"
+=======
+            "program": "${workspaceFolder}/Standard Projects/7. Secret Message.js",
+>>>>>>> b7f34c72ccd682e9df83f92a48f1d4152054091f
         }
     ]
 }
