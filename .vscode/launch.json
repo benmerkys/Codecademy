@@ -13,11 +13,7 @@
                 "<node_internals>/**"
             
             ],
-<<<<<<< HEAD
             "program": "${workspaceFolder}\\Standard Projects\\8. Whale Talk.js"
-=======
-            "program": "${workspaceFolder}/Standard Projects/7. Secret Message.js",
->>>>>>> b7f34c72ccd682e9df83f92a48f1d4152054091f
         }
     ]
 }
