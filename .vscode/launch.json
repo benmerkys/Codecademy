@@ -13,7 +13,7 @@
                 "<node_internals>/**"
             
             ],
-            "program": "${workspaceFolder}\\Standard Projects\\8. Whale Talk.js"
+            "program": "${workspaceFolder}\\Challenge Projects\\2. Credit Card Checker\\main.js"
         }
     ]
 }
