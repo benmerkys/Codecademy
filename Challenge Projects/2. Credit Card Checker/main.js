@@ -22,15 +22,58 @@ const mystery5 = [4, 9, 1, 3, 5, 4, 0, 4, 6, 3, 0, 7, 2, 5, 2, 3];
 // An array of all the arrays above
 const batch = [valid1, valid2, valid3, valid4, valid5, invalid1, invalid2, invalid3, invalid4, invalid5, mystery1, mystery2, mystery3, mystery4, mystery5];
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-// Add your functions below:
+//function to make logging easier
+const log = data => console.log(data);
+
+let resultArray = [];
 
 const validateCred = array => {
+   array.reverse();
    
+   let everyOtherDigit = [];
+   let everyOtherDigitDoubled = []; 
+   let everyOtherDigitSubtracted = [];
+   let allOtherDigits = [];
+   let lastDigit = [];
+   let CCNumberSum = 0;
+
+    for (i = 1; i < array.length; i+=2) {
+        everyOtherDigit.push(array[i]);
+    }   
+    for (y = 0; y < everyOtherDigit.length; y++){
+        everyOtherDigitDoubled.push(everyOtherDigit[y] * 2);
+    }
+    for (u = 0; u < everyOtherDigitDoubled.length; u++){
+        if (everyOtherDigitDoubled[u] > 9) {
+            everyOtherDigitSubtracted.push(everyOtherDigitDoubled[u] - 9)
+        } else everyOtherDigitSubtracted.push(everyOtherDigitDoubled[u]);
+    }
+    for (w = 2; w < array.length; w+=2){
+        allOtherDigits.push(array[w]);
+        CCNumberSum = CCNumberSum + array[w];
+    }
+    for (x=0; x < everyOtherDigitSubtracted.length; x++){
+        CCNumberSum = CCNumberSum + everyOtherDigitSubtracted[x]
+    }
+
+    lastDigit.push(CCNumberSum % 10);
+   
+    CCNumberSum = CCNumberSum + lastDigit[0];
+
+    if ((CCNumberSum % 10) === 0){
+        log('Valid');
+    } else {
+        log('Invalid')
+    }
+
+    //log(everyOtherDigitDoubled);
+    //log(everyOtherDigitSubtracted);
+    //log(allOtherDigits);
+    //log(CCNumberSum);
+    //log(lastDigit);
+
 };
 
-
-
-
-
-
+validateCred(valid3);
