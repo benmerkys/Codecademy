@@ -30,50 +30,49 @@ const log = data => console.log(data);
 let resultArray = [];
 
 const validateCred = array => {
-   array.reverse();
+   //reverses the array because we're checking from right to left
+    array.reverse();
    
-   let everyOtherDigit = [];
-   let everyOtherDigitDoubled = []; 
-   let everyOtherDigitSubtracted = [];
+   let everyOtherDigit = []; 
    let allOtherDigits = [];
-   let lastDigit = [];
+   let checkDigit = [];
    let CCNumberSum = 0;
 
+   //iterates through every other element of the array (starting from index 1 since index 0 is the 'checkDigit')
+   //if value of element, multiplied by two is greater than 9, then subract 9 and push to new array 'everyOtherDigit'
+   //otherwise if element multiplied by two is less than nine, then simply push to the same array 'everyOtherDigit'
     for (i = 1; i < array.length; i+=2) {
-        everyOtherDigit.push(array[i]);
-    }   
-    for (y = 0; y < everyOtherDigit.length; y++){
-        everyOtherDigitDoubled.push(everyOtherDigit[y] * 2);
+        if ((array[i] * 2) > 9) { 
+            everyOtherDigit.push((array[i] * 2) - 9);
+        } else {
+            everyOtherDigit.push((array[i] * 2));
+            }
+        }
+
+    //take individual elements of 'everyOtherDigit' and add them all together
+    for (x=0; x < everyOtherDigit.length; x++){
+        CCNumberSum = CCNumberSum + everyOtherDigit[x]
     }
-    for (u = 0; u < everyOtherDigitDoubled.length; u++){
-        if (everyOtherDigitDoubled[u] > 9) {
-            everyOtherDigitSubtracted.push(everyOtherDigitDoubled[u] - 9)
-        } else everyOtherDigitSubtracted.push(everyOtherDigitDoubled[u]);
-    }
+
+    //iterates through every other element of the array (starting from index 2 this time) to grab the rest of the elements and add them all together
+    //take individual elements of 'everyOtherDigit' and add them all together
     for (w = 2; w < array.length; w+=2){
         allOtherDigits.push(array[w]);
         CCNumberSum = CCNumberSum + array[w];
     }
-    for (x=0; x < everyOtherDigitSubtracted.length; x++){
-        CCNumberSum = CCNumberSum + everyOtherDigitSubtracted[x]
-    }
 
-    lastDigit.push(CCNumberSum % 10);
-   
-    CCNumberSum = CCNumberSum + lastDigit[0];
+    //following Luhn's algorythm, multiply the total sum of elements by nine and push mod 10 of the result into 'checkDigit'
+    CCNumberSum *= 9;
+    checkDigit.push(CCNumberSum % 10);
 
-    if ((CCNumberSum % 10) === 0){
-        log('Valid');
+    //compare resulting 'checkdigit' against first element of the array
+    //if these are equal, then the passed card number is correct
+    if ((checkDigit[0]) === array[0]) {
+        log('Kreditines korteles numeris teisingas');
     } else {
-        log('Invalid')
+        log('Kreditines korteles numeris neteisingas')
     }
-
-    //log(everyOtherDigitDoubled);
-    //log(everyOtherDigitSubtracted);
-    //log(allOtherDigits);
-    //log(CCNumberSum);
-    //log(lastDigit);
 
 };
 
-validateCred(valid3);
+validateCred(mystery2);
