@@ -68,11 +68,10 @@ const validateCred = array => {
     //compare resulting 'checkdigit' against first element of the array
     //if these are equal, then the passed card number is correct
     if ((checkDigit[0]) === array[0]) {
-        log('Kreditines korteles numeris teisingas');
+        log('Card number is valid.');
     } else {
-        log('Kreditines korteles numeris neteisingas')
+        log('Card number is invalid.')
     }
-
 };
 
 validateCred(mystery2);
