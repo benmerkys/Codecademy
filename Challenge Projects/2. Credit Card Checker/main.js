@@ -87,8 +87,6 @@ const findInvalidCards = nestedArray => {
     return invalidCards;
 };
 
-//log(findInvalidCards(batch));
-
 const idInvalidCardCompanies = invalidCardArray => {
 
     for (f = 0; f < invalidCardArray.length; f++){
