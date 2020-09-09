@@ -68,10 +68,35 @@ const validateCred = array => {
     //compare resulting 'checkdigit' against first element of the array
     //if these are equal, then the passed card number is correct
     if ((checkDigit[0]) === array[0]) {
-        log('Card number is valid.');
+        //log('Card number is valid.');
+        return true;
     } else {
-        log('Card number is invalid.')
+        //log('Card number is invalid.')
+        return false; 
     }
 };
 
-validateCred(mystery2);
+const findInvalidCards = nestedArray => {
+    let invalidCards = [];
+
+    for (c = 0; c < nestedArray.length; c++) {
+        if (validateCred(nestedArray[c]) === false) {
+            invalidCards.push(nestedArray[c]);
+        }
+    }
+    return invalidCards;
+};
+
+//log(findInvalidCards(batch));
+
+const idInvalidCardCompanies = invalidCardArray => {
+
+    for (f = 0; f < invalidCardArray.length; f++){
+
+        if ((invalidCardArray[f][0]) === 3) {
+            log('This card is Amex');
+        }
+    }
+};
+
+idInvalidCardCompanies(findInvalidCards(batch));
