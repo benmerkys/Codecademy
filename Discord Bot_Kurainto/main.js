@@ -5,8 +5,8 @@ const client = new Discord.Client();
 
 
 client.once('ready', () => {
-    console.log('Teknorigi-chan engaged.');
+    console.log('Kurainto-kun engaged.');
 })
 
 
-client.login('Nzc4MDM1NzU4ODk5OTIwODk2.X7MIRA.FIJyYyZ8zZ-L5XWm1fFZJ5EwsgI');
+client.login('Nzc4MDM2NTc3OTI5OTIwNTgz.X7MJBw.ab_o-Zi3MGUclIL5_nZOkD9ucvo');
